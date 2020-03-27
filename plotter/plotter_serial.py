@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 import serial
 
 # init serial - source for the data
-SERIAL_PORT = '/dev/tty.usbmodem14201'  # path to serial output
+SERIAL_PORT = '/dev/tty.usbmodem14201'  # path to serial output on Mac
 SERIAL_RATE = 9600
 ser = serial.Serial(SERIAL_PORT, SERIAL_RATE)
 
-# data to be displayed on plot
+# containers for data to be displayed on plot
 last_x, last_y, last_z = None, None, None
 xs, ys, zs, cs = [], [], [], []
 new_points_count = 0
@@ -21,6 +21,7 @@ fig.canvas.mpl_connect('close_event', lambda evt: quit())
 
 while True:
 
+    # Parse "x  y  z" value from serial
     try:
         xyz = ser.readline().decode('utf-8').split()
         if last_x is None:
@@ -40,6 +41,7 @@ while True:
         ser = serial.Serial(SERIAL_PORT, SERIAL_RATE)
         print('Serial reconnected!')
 
+    # ignore other non-data values
     except Exception as e:
         print("Bad read from serial:", xyz, e)
         continue
@@ -63,6 +65,7 @@ while True:
         zs.pop(0)
         cs.pop(0)
 
+    # draw when we have 2 points, too frequent draws cause lags    
     if new_points_count > 1:
         ax.cla()
         ax.scatter(xs, ys, zs, c=cs, cmap='cool')
