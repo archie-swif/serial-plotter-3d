@@ -1,6 +1,6 @@
-# serial-plotter-3d
+# 3d serial plotter
 
-Python tool to visualize 3d data coming from serial interface. 
+Python tool to visualize 3-axis data coming from serial interface. 
 
 Just like arduino serial plotter, but with an extra dimension!
 
