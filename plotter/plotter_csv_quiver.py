@@ -23,10 +23,6 @@ for dot in dots:
     # vector length is color!
     cs.append(math.sqrt(math.pow(x, 2) + math.pow(y, 2) + math.pow(z, 2)))
 
-    xx = len(xs)
-    yy = [0] * len(xs)
-    zz = [0] * len(xs)
-
     # ax.cla()
     ax.quiver(0, 0, t, x, y, z - t)
     ax.plot([x], [y], [z])
