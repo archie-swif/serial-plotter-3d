@@ -64,11 +64,19 @@ while True:
         ys.pop(0)
         zs.pop(0)
         cs.pop(0)
+        
+    # create a position vector for plotting the vectors
+    # since our buffer is 256, make that the max length of the vector
+    # we could draw these in a circle if we knew how many samples were in a rotation, or what the magnet position was, but a line will do
+    xx = range(len(xs))
+    yy = [0] * len(xs)
+    zz = [0] * len(xs)
+    
 
     # draw when we have 2 points, too frequent draws cause lags    
     if new_points_count > 1:
         ax.cla()
-        ax.scatter(xs, ys, zs, c=cs, cmap='cool')
+        ax.quiver(xx, yy, zz, xs, ys, zs, c=cs, cmap='cool')
         new_points_count = 0
 
     plt.draw()
