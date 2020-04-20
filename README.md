@@ -9,4 +9,8 @@ Just like arduino serial plotter, but with an extra dimension!
 
 Works well Arduino Nano 33 Sense and [Simple Magnetometer](https://github.com/arduino-libraries/Arduino_LSM9DS1/blob/master/examples/SimpleMagnetometer/SimpleMagnetometer.ino) sketch from [Arduino_LSM9DS1](https://github.com/arduino-libraries/Arduino_LSM9DS1library)
 
-More details in https://www.reddit.com/r/arduino/comments/fq50zl/wanted_to_see_the_world_from_magnetometers/
+More details in 
+
+https://www.reddit.com/r/arduino/comments/fq50zl/wanted_to_see_the_world_from_magnetometers/
+
+https://www.reddit.com/r/Physics/comments/fv7ojs/i_see_your_atoms_in_gas_thing_and_i_raise_you_a/
